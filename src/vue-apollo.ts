@@ -9,7 +9,7 @@ Vue.use(VueApollo)
 
 const accessToken = 'daa165ef2f6299658d20b308a483fcab1b9f071c'
 const authMiddleware = new ApolloLink((operation, forward) => {
-  if (!forward) return null
+  if (!forward) { return null }
   operation.setContext({
     headers: {
       Authorization: `bearer ${accessToken}`,
