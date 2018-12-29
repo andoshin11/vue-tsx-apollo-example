@@ -7,9 +7,11 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 
 Vue.use(VueApollo)
 
-const accessToken = 'daa165ef2f6299658d20b308a483fcab1b9f071c'
+const accessToken = process.env.VUE_APP_GITHUB_API_TOKEN
 const authMiddleware = new ApolloLink((operation, forward) => {
-  if (!forward) { return null }
+  if (!forward) {
+    return null
+  }
   operation.setContext({
     headers: {
       Authorization: `bearer ${accessToken}`,
