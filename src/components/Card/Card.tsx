@@ -1,5 +1,6 @@
 import * as tsx from 'vue-tsx-support'
 import RepositoryEntity from '@/entities/Repository'
+import styles from './styles.css'
 
 export default tsx.component({
   name: 'Card',
@@ -11,30 +12,30 @@ export default tsx.component({
   },
   render() {
     return (
-      <div style={styles.card}>
-        <a href={this.repository.props.url} target="_blank" style={styles.name}>
+      <div class={styles.card}>
+        <a href={this.repository.props.url} target="_blank" class={styles.name}>
           {this.repository.props.name}
         </a>
-        <div style={styles.description}>
+        <div class={styles.description}>
           {this.repository.props.description}
         </div>
-        <div style={styles.info}>
+        <div class={styles.info}>
           {this.repository.props.primaryLanguage ? (
-            <div style={styles.lang}>
+            <div class={styles.lang}>
               <div
+                class={styles.langColor}
                 style={{
-                  ...styles.langColor,
                   backgroundColor:
                     this.repository.props.primaryLanguage.color || ''
                 }}
               />
-              <div style={styles.langName}>
+              <div class={styles.langName}>
                 {this.repository.props.primaryLanguage.name}
               </div>
             </div>
           ) : null}
-          <div style={styles.star}>
-            <div style={styles.starIcon}>
+          <div class={styles.star}>
+            <div class={styles.starIcon}>
               <svg
                 aria-hidden="true"
                 data-prefix="fas"
@@ -50,12 +51,10 @@ export default tsx.component({
                 />
               </svg>
             </div>
-            <div style={styles.starCount}>
-              {this.repository.props.stargazers.totalCount}
-            </div>
+            <div>{this.repository.props.stargazers.totalCount}</div>
           </div>
-          <div style={styles.fork}>
-            <div style={styles.forkIcon}>
+          <div class={styles.fork}>
+            <div class={styles.forkIcon}>
               <svg
                 aria-hidden="true"
                 data-prefix="fas"
@@ -71,83 +70,13 @@ export default tsx.component({
                 />
               </svg>
             </div>
-            <div style={styles.forkCount}>
-              {this.repository.props.forkCount}
-            </div>
+            <div>{this.repository.props.forkCount}</div>
           </div>
           {this.repository.props.isFork ? (
-            <span style={styles.forked}>forked</span>
+            <span class={styles.forked}>forked</span>
           ) : null}
         </div>
       </div>
     )
   }
 })
-
-const styles = {
-  card: {
-    borderRadius: '3px',
-    border: 'solid 1px #d1d5da',
-    padding: '16px',
-    textAlign: 'left',
-    fontSize: '14px'
-  },
-  name: {
-    display: 'block',
-    marginBottom: '8px',
-    fontSize: '16px'
-  },
-  lang: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-  langColor: {
-    marginTop: '-2px',
-    width: '11px',
-    height: '11px',
-    borderRadius: '50%',
-    marginRight: '4px'
-  },
-  langName: {
-    marginRight: '16px'
-  },
-  description: {
-    textAlign: 'left',
-    marginBottom: '16px',
-    minHeight: '40px'
-  },
-  info: {
-    display: 'flex',
-    alignItems: 'center',
-    lineHeight: '16px'
-  },
-  star: {
-    display: 'flex',
-    alignItems: 'center',
-    marginRight: '16px'
-  },
-  starIcon: {
-    marginTop: '-1px',
-    width: '14px',
-    height: '14px',
-    marginRight: '4px'
-  },
-  starCount: {},
-  fork: {
-    display: 'flex',
-    alignItems: 'center',
-    marginRight: '16px'
-  },
-  forkIcon: {
-    marginTop: '-4px',
-    width: '10px',
-    height: '10px',
-    marginRight: '6px'
-  },
-  forkCount: {},
-  forked: {
-    border: 'solid 1px #ddd',
-    borderRadius: '4px',
-    padding: '2px 8px'
-  }
-}

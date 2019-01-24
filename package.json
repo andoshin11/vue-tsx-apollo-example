@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "watch:css": "tcm src -w",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
@@ -37,6 +38,7 @@
     "apollo": "^2.1.8",
     "babel-core": "7.0.0-bridge.0",
     "ts-jest": "^23.0.0",
+    "typed-css-modules": "^0.3.7",
     "typescript": "^3.0.0",
     "vue-cli-plugin-tsx-support": "^0.3.0",
     "vue-jsx-hot-loader": "^1.4.0",

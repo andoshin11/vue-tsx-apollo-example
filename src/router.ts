@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Repositories from './views/Repositories'
+import RepositoryList from './views/RepositoryList'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'repositories',
-      component: Repositories
+      name: 'RepositoryList',
+      component: RepositoryList
     }
   ]
 })

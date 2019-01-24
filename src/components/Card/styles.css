@@ -1,0 +1,74 @@
+.card {
+  border-radius: 3px;
+  border: solid 1px #d1d5da;
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.name {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+}
+
+.langColor {
+  margin-top: -2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.langName {
+  margin-right: 16px;
+}
+
+.description {
+  text-align: left;
+  margin-bottom: 16px;
+  min-height: 40px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  line-height: 16px;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.starIcon {
+  margin-top: -1px;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+
+.fork {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.forkIcon {
+  margin-top: -4px;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+
+.forked {
+  border: solid 1px #ddd;
+  border-radius: 4px;
+  padding: 2px 8px;
+}

@@ -1,9 +1,11 @@
 import * as tsx from 'vue-tsx-support'
 import gql from 'graphql-tag'
-import { GetRepos_viewer } from './__generated__/GetRepos'
 import RepositoryEntity from '@/entities/Repository'
 import Card from '@/components/Card'
 import Button from '@/components/Button'
+
+import { GetRepos_viewer } from './__generated__/GetRepos'
+import styles from './styles.css'
 
 const getReposQuery = gql`
   query GetRepos {
@@ -76,12 +78,12 @@ export default tsx.component({
           </a>
           's repositories list
         </div>
-        <div style={styles.button}>
+        <div class={styles.button}>
           <Button label="Click me!" onSuccess={e => alert(e.msg)} />
         </div>
-        <div style={styles.list}>
+        <div class={styles.list}>
           {this.repositories.map(repo => (
-            <div style={styles.listItem}>
+            <div class={styles.listItem}>
               <Card repository={repo} />
             </div>
           ))}
@@ -90,20 +92,3 @@ export default tsx.component({
     )
   }
 })
-
-const styles = {
-  list: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    width: '780px',
-    margin: '40px auto'
-  },
-  listItem: {
-    boxSizing: 'border-box',
-    width: '50%',
-    padding: '16px'
-  },
-  button: {
-    margin: '24px 0'
-  }
-}
